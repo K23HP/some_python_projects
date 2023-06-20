@@ -16,3 +16,4 @@ def deliver_email(email: object, password: str):
             msg=f"From: {email.sender}\nTo: {email.reciever}\n\
                 Subject:Hello World!\n\nThis is the greeting."
         )
+    print(f'✅ Email sent to "{email.reciever}".')    
