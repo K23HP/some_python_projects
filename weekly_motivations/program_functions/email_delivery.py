@@ -13,7 +13,7 @@ def deliver_email(email: object, password: str):
         connection.sendmail(
             from_addr=email.sender, 
             to_addrs=email.reciever, 
-            msg=f"From: {email.sender}\nTo: {email.reciever}\n\
-                Subject:Hello World!\n\nThis is the greeting."
+            msg=f"From: {email.sender}\nTo: {email.reciever}" + \
+                f"\nSubject: Tuesday Motivation!\n\n{email.message}"  
         )
     print(f'✅ Email sent to "{email.reciever}".')    
