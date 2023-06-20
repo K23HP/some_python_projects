@@ -7,7 +7,7 @@ quote = generate_random_quotes()
 
 my_email = "example@email.com"
 password = "Your_email_password"
-smtp_host = "Your email smtp host"  # e.g. "smtp-mail.outlook.com"
+smtp_host = "Your_email_smtp_host"  # e.g. "smtp-mail.outlook.com" or "smtp.gmail.com"
 
 receiver_email = "reciever@email.com"
 
