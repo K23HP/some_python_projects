@@ -1,0 +1,6 @@
+venv
+__pycache__
+.history
+.DS_Store
+birthday_wisher
+trade_news_notifier
