@@ -1,0 +1,7 @@
+Dear [NAME],
+
+[MESSAGE]
+Have a great day!
+
+Best Wishes,
+[Your Name]

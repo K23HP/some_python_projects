@@ -1,19 +1,32 @@
+from program_components.message import MotivationalMessage
+from program_components.my_email import Email
+from program_components.receiver_data import get_receiver_name_email
 from program_functions.current_weekday import get_current_weekday
-from program_functions.email import Email
-from program_functions.email_delivery import deliver_email
-from program_functions.random_quote import generate_random_quotes
 
-quote = generate_random_quotes()
+my_email = "Your email"
+password = "Your email password"
+smtp_host = "Your Email SMTP"  # e.g. "smtp-mail.outlook.com" or "smtp.gmail.com"
 
-my_email = "example@email.com"
-password = "Your_email_password"
-smtp_host = "Your_email_smtp_host"  # e.g. "smtp-mail.outlook.com" or "smtp.gmail.com"
+receiver_names, receiver_emails = get_receiver_name_email("path/to/receivers.csv")
 
-receiver_email = "reciever@email.com"
+QUOTES_PATH = "path/to/quotes.txt"
+LETTER_TEMPLATE_PATH = "path/to/letter_templates"  
 
-email = Email(my_email, password, smtp_host, receiver_email, quote)
+message_generator = MotivationalMessage(QUOTES_PATH, LETTER_TEMPLATE_PATH)
+
+# Create 
+email_details = {
+    "sender_email": my_email,
+    "sender_password": password,
+    "sender_smtp": smtp_host,
+    "receiver_names": receiver_names,
+    "receiver_emails": receiver_emails,
+    "message_generator": message_generator,
+}
+
+email = Email(email_details)
 
 today = get_current_weekday()
 
 if today == "Monday":
-    deliver_email(email)
+    email.deliver_email()
