@@ -28,5 +28,7 @@ email = Email(email_details)
 
 today = get_current_weekday()
 
-if today == "Monday":
+delivery_day = "Monday"
+
+if today == delivery_day:
     email.deliver_email()
