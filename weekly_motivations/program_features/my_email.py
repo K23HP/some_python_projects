@@ -8,7 +8,7 @@ class Email:
         self.sender_smtp = email_details["sender_smtp"]
         self.receiver_names = email_details["receiver_names"]
         self.receiver_emails = email_details["receiver_emails"]  # List
-        self.message_generator = email_details["message_generator"]
+        self.message = email_details["message"]
     
     
     def deliver_email(self):
@@ -30,7 +30,7 @@ class Email:
                     to_addrs=self.receiver_emails[i],  # Receiver self
                     msg=f"From: {self.sender_email}\nTo: {self.receiver_emails[i]}" + \
                         "\nSubject: Tuesday Motivation!" + \
-                        f"\n\n{self.message_generator.generate_motivational_message(self.receiver_names[i])}"
+                        f"\n\n{self.message.generate_motivational_message(self.receiver_names[i])}"
                 )
                 print(f'✅ Email sent to "{self.receiver_emails[i]}".')
         
